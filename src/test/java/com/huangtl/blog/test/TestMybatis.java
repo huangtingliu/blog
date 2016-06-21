@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.huangtl.blog.mapper.BlogMapper;
 import com.huangtl.blog.mapper.User;
 
 /**
@@ -26,6 +27,8 @@ public class TestMybatis {
 
 	@Autowired
 	private User user;
+	@Autowired
+	private BlogMapper blogMapper;
 	
 	@Before
 	public void before() {
@@ -43,6 +46,16 @@ public class TestMybatis {
 	public void test() {
 		try {
 			List<Map<String, Object>> list = user.userList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			fail("接口映射xml错误");
+		}
+		
+	}
+	@Test
+	public void testBlogMapper() {
+		try {
+			List<?> list = blogMapper.blogList(null);
 		} catch (Exception e) {
 			// TODO: handle exception
 			fail("接口映射xml错误");

@@ -8,6 +8,6 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/blog-core/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="blog-core"/>
+        <property name="context-root" value="blog"/>
     </wb-module>
 </project-modules>
