@@ -38,6 +38,15 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- 文件上传 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8" />
+		<!-- 限制最大上传尺寸 设置为10M-->
+		<property name="maxUploadSize" value="10485760000"></property>
+		<!-- 内存中最大尺寸 4k -->
+		<property name="maxInMemorySize" value="4096"></property>
+	</bean>
+	
 	<!-- 定义初始方法 -->
 	<bean id="initial" class="com.huangtl.framework.init.Initial" init-method="init"></bean>
 	
