@@ -52,6 +52,7 @@
 	
 	<!-- 配置资源文件访问路径，访问这里的mapping就可以映射到location目录,但是会被拦截器拦截 -->
 	<mvc:resources location="/WEB-INF/res/" mapping="#{initial.resRoot}/**"></mvc:resources>
+	<mvc:resources location="/upload/" mapping="/upload/**"></mvc:resources>
 	
 	<!-- bean -->
 	<bean class="com.huangtl.framework.utils.SpringContextUtil"></bean>

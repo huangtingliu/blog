@@ -19,6 +19,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<style type="text/css">
+		img{
+			width: 150px;
+			height:150px;
+		}
+	</style>
 	<script type="text/javascript" src="${resRoot}/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="${resRoot}/js/jquery-form.js"></script>
   </head>
@@ -48,9 +54,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	function upload(){
     		$("#uploadForm").ajaxSubmit(function(data){
     			
-    			$("#showPath1").text(data[0]);
-    			$("#showPath2").text(data[1]);
-    			$("#showPath3").text(data[2]);
+    			//$("#showPath1").text(data[0]);
+    			$("#showPath1").append("<img src='${ctxPath}/upload/"+data[0]+"'/>");
+    			//$("#showPath2").text(data[1]);
+    			$("#showPath2").append("<img src='${ctxPath}/upload/"+data[1]+"'/>");
+    			//$("#showPath3").text(data[2]);
+    			$("#showPath3").append("<img src='${ctxPath}/upload/"+data[2]+"'/>");
     			//记得return false防止重复提交
     		    return false;
     		});
